@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meltora — Premium Chocolate Brownies, Baked to Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FDFBF7;
+      --card-bg: #FFFFFF;
+      --accent: #B26A20;
+      --accent-hover: #965415;
+      --dark: #1E1712;
+      --text: #3D332A;
+      --muted: #7A6F65;
+      --border: #EFE9DF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--dark);
+    }
+    .logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .nav-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+    }
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(20, 15, 12, 0.65), rgba(20, 15, 12, 0.85)),
+                  url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: #fff;
+      padding: 5rem 1.25rem 4rem;
+      text-align: center;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 2.3rem;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .hero p {
+      color: #E2DAD2;
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin: 0 auto 1.75rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+    .features {
+      padding: 3.5rem 1.25rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .features h2 { font-size: 1.9rem; margin-bottom: 0.5rem; }
+    .features-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2.5rem; }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+      text-align: left;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    .feature-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+    .feature-card p { font-size: 0.88rem; color: var(--muted); }
+    .products {
+      padding: 3.5rem 1.25rem;
+      background: #F8F4EE;
+    }
+    .products-inner { max-width: 1100px; margin: 0 auto; }
+    .products h2 { text-align: center; font-size: 2rem; margin-bottom: 0.3rem; }
+    .products-sub { text-align: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 2.5rem; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-content {
+      padding: 1.2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-content h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .product-content p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+    }
+    .price { font-weight: 700; color: var(--dark); font-size: 1rem; }
+    .order-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .form-section {
+      padding: 4rem 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      border-radius: 8px;
+    }
+    .form-card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center; }
+    .form-card p { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 1.8rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid #D6CCC2;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .submit-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.85rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    footer {
+      background: var(--dark);
+      color: #C8BFB5;
+      padding: 3rem 1.25rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    footer h3 { color: #fff; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <div class="logo-badge">M</div>
+      <span>Meltora</span>
+    </div>
+    <a href="#order" class="nav-btn">ORDER NOW</a>
+  </header>
+
+  <section class="hero">
+    <h1>Premium Chocolate Brownies, Baked to Order</h1>
+    <p>Four signature fillings. 75 g of pure fudge in every square, baked fresh for your pre-order date and packed in a kraft gift box.</p>
+    <a href="#order" class="btn-primary">PRE-ORDER A BOX</a>
+  </section>
+
+  <section class="features">
+    <h2>Why Everyone Melts for Meltora</h2>
+    <p class="features-sub">Rich, fudgy, and irresistible — made by hand in small batches with fillings that actually melt.</p>
+    <div class="grid-2">
+      <div class="feature-card">
+        <h3>Premium Ingredients</h3>
+        <p>Real chocolate, real butter, roasted hazelnuts, and creamy peanut butter — no shortcuts.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Freshly Prepared to Order</h3>
+        <p>Every box is baked for your specific date so it reaches you soft, fudgy, and fresh.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Perfect for Gifting</h3>
+        <p>Kraft gift boxes with hand-tied twine make every box ready for birthdays and celebrations.</p>
+      </div>
+      <div class="feature-card">
+        <h3>75 g of Pure Fudge</h3>
+        <p>Generously sized individual squares packed with thick, rich chocolate richness.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="products-inner">
+      <h2>Our Brownies</h2>
+      <p class="products-sub">₹99–₹129 per piece. Every brownie is 75 g and baked fresh for your pre-order date.</p>
+      
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Choco Melt">
+          <div class="product-content">
+            <div>
+              <h3>Choco Melt</h3>
+              <p>Our classic brownie with molten chocolate centre.</p>
+            </div>
+            <div class="product-footer">
+              <span class="price">₹99 / piece</span>
+              <a href="#order" class="order-link">Order Now &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1515037893149-de7f840978e2?auto=format&fit=crop&w=600&q=80" alt="Double Choco Melt">
+          <div class="product-content">
+            <div>
+              <h3>Double Choco Melt</h3>
+              <p>Double chocolate filling for the ultimate dark cocoa experience.</p>
+            </div>
+            <div class="product-footer">
+              <span class="price">₹109 / piece</span>
+              <a href="#order" class="order-link">Order Now &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1589218436045-ee320057f443?auto=format&fit=crop&w=600&q=80" alt="Peanut Melt">
+          <div class="product-content">
+            <div>
+              <h3>Peanut Melt</h3>
+              <p>Chocolate brownie with creamy peanut butter core.</p>
+            </div>
+            <div class="product-footer">
+              <span class="price">₹119 / piece</span>
+              <a href="#order" class="order-link">Order Now &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Nutella Melt">
+          <div class="product-content">
+            <div>
+              <h3>Nutella Melt</h3>
+              <p>Loaded with generous hazelnut cocoa spread.</p>
+            </div>
+            <div class="product-footer">
+              <span class="price">₹129 / piece</span>
+              <a href="#order" class="order-link">Order Now &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="order">
+    <div class="form-card">
+      <h2>Pre-Order With Us</h2>
+      <p>Tell us your box size and flavours. Your details go directly to WhatsApp for instant confirmation.</p>
+      
+      <form onsubmit="handleOrder(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="custName" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="custPhone" required placeholder="WhatsApp contact number">
+        </div>
+        <div class="form-group">
+          <label>Box Selection</label>
+          <select id="boxType">
+            <option value="Box of 4 Pieces (₹379)">Box of 4 Pieces (₹379)</option>
+            <option value="Box of 6 Pieces (₹559)">Box of 6 Pieces (₹559)</option>
+            <option value="Box of 9 Pieces (₹819)">Box of 9 Pieces (₹819)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Delivery Address / Notes</label>
+          <textarea id="notes" rows="3" placeholder="Address, preferred delivery date, and flavours"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">SEND ORDER ON WHATSAPP</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Meltora</h3>
+    <p>Premium handmade chocolate brownies. 75 g each, baked to order.</p>
+    <p style="margin-top: 1.5rem; font-size: 0.75rem; color: #8F8377;">&copy; 2026 Meltora. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleOrder(e) {
+      e.preventDefault();
+      var name = document.getElementById('custName').value;
+      var phone = document.getElementById('custPhone').value;
+      var box = document.getElementById('boxType').value;
+      var notes = document.getElementById('notes').value;
+      
+      var text = "Hello Meltora! I would like to place an order:%0A" +
+                 "*Name:* " + encodeURIComponent(name) + "%0A" +
+                 "*Phone:* " + encodeURIComponent(phone) + "%0A" +
+                 "*Selection:* " + encodeURIComponent(box) + "%0A" +
+                 "*Notes/Address:* " + encodeURIComponent(notes);
+                 
+      window.open("https://wa.me/?text=" + text, "_blank");
+    }
+  </script>
+</body>
+</html>
