@@ -1,0 +1,22 @@
+{
+  "name": "meltora-ecommerce",
+  "version": "1.0.0",
+  "description": "Meltora — Premium Handcrafted Chocolate Brownies, Baked to Order (Online E-Commerce)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "meltora",
+    "brownies",
+    "chocolate",
+    "e-commerce",
+    "whatsapp-ordering",
+    "bakery",
+    "kraft-gift-box"
+  ],
+  "author": "Meltora Bakery",
+  "license": "MIT"
+}
+
