@@ -880,13 +880,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mobileMenuBtn && mobileNavDrawer) {
     mobileMenuBtn.addEventListener("click", () => {
-      mobileNavDrawer.classList.toggle("open");
+      const isOpen = mobileNavDrawer.classList.toggle("open");
+      document.body.style.overflow = isOpen ? "hidden" : "";
     });
   }
 
   if (mobileNavClose && mobileNavDrawer) {
     mobileNavClose.addEventListener("click", () => {
       mobileNavDrawer.classList.remove("open");
+      document.body.style.overflow = "";
     });
   }
 
@@ -894,6 +896,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".mobile-nav-link").forEach(link => {
     link.addEventListener("click", () => {
       mobileNavDrawer?.classList.remove("open");
+      document.body.style.overflow = "";
     });
   });
 

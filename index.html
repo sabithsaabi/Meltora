@@ -94,25 +94,18 @@
   </header>
 
   <!-- Mobile Navigation Drawer -->
-  <div id="mobile-nav-drawer"
-    style="display: none; position: fixed; inset: 0; background: rgba(26,15,8,0.96); z-index: 150; padding: 2rem; color: #fff; flex-direction: column; justify-content: center; align-items: center; gap: 2rem;">
-    <button id="mobile-nav-close"
-      style="position: absolute; top: 1.5rem; right: 1.5rem; color: #fff; font-size: 2rem; background: none; border: none;">&times;</button>
-    <a href="#hero" class="mobile-nav-link"
-      style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Home</a>
-    <a href="#brownies" class="mobile-nav-link"
-      style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Our Brownies</a>
-    <a href="#craft" class="mobile-nav-link" style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Our
-      Craft</a>
-    <a href="#gallery" class="mobile-nav-link"
-      style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Instagram Gallery</a>
-    <a href="#story" class="mobile-nav-link" style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Our
-      Story</a>
-    <a href="#reviews" class="mobile-nav-link"
-      style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">Reviews</a>
-    <a href="#faq" class="mobile-nav-link"
-      style="font-family: var(--font-serif); font-size: 1.8rem; color: #fff;">FAQs</a>
-    <a href="#order" class="mobile-nav-link btn-primary" style="margin-top: 1rem;">PRE-ORDER NOW</a>
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <button id="mobile-nav-close" class="mobile-nav-close" aria-label="Close navigation">&times;</button>
+    <nav class="mobile-nav-links">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#brownies" class="mobile-nav-link">Our Brownies</a>
+      <a href="#craft" class="mobile-nav-link">Our Craft</a>
+      <a href="#gallery" class="mobile-nav-link">Instagram Gallery</a>
+      <a href="#story" class="mobile-nav-link">Our Story</a>
+      <a href="#reviews" class="mobile-nav-link">Reviews</a>
+      <a href="#faq" class="mobile-nav-link">FAQs</a>
+      <a href="#order" class="mobile-nav-link btn-primary" style="margin-top: 0.5rem; justify-content: center; width: 100%;">PRE-ORDER NOW</a>
+    </nav>
   </div>
 
   <main>
